@@ -41,7 +41,7 @@ public class DepartmentDbDAO implements RepositoryDAO<Department> {
 	    try (Connection con = getConnection();
 	         PreparedStatement pst = con.prepareStatement(insert_department, new String[] { "id" })) {
 	        Long Id = -1L;
-	        pst.setString(1, department.getFaculty());
+	        pst.setLong(1, department.getFacultyId());
 	        pst.setString(2, department.getName());
 	        pst.setString(3, department.getShortName());
 	        pst.setString(4, department.getHead());

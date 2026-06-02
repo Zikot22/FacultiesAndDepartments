@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.FileNotFoundException; 
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -18,8 +18,8 @@ import dao.ConnectionProperty;
 public class FacultyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	ConnectionProperty prop; 
-	
+	ConnectionProperty prop;
+
 	public FacultyServlet() throws FileNotFoundException, IOException {
 		super();
 		prop = new ConnectionProperty();
@@ -49,6 +49,21 @@ public class FacultyServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		FacultyDbDAO dao = new FacultyDbDAO();
+
+		String name = request.getParameter("facName");
+		String shortName = request.getParameter("shortName");
+		String dean = request.getParameter("dean");
+		String phoneNumber = request.getParameter("phoneNumber");
+		
+		Faculty newFaculty = new Faculty(name, shortName, dean, phoneNumber);
+
+		try {
+			Long index = dao.insert(newFaculty);
+			System.out.println("Adding result: " + index);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		doGet(request, response);
 	}
 }
