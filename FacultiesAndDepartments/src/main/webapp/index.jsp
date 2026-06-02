@@ -18,8 +18,8 @@
         <h2 class="mb-4">Функции системы</h2>
 
         <div class="list-group d-inline-block text-start" style="min-width:220px;">
-          <a href="#" class="list-group-item list-group-item-action">Факультеты</a>
-          <a href="#" class="list-group-item list-group-item-action">Кафедры</a>
+          <a href="/faculty" class="list-group-item list-group-item-action">Факультеты</a>
+          <a href="/department" class="list-group-item list-group-item-action">Кафедры</a>
         </div>
       </section>
     </main>

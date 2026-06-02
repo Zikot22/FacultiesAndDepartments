@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/HelloFacultyServlet")
+@WebServlet("/faculty")
 public class FacultyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -19,13 +19,7 @@ public class FacultyServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html");
-		PrintWriter writer = response.getWriter();
-		try {
-			writer.println("<h2>Привет FacultyServlet</h2>");
-		} finally {
-			writer.close();
-		}
-
+		request.getRequestDispatcher("/views/faculty.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
