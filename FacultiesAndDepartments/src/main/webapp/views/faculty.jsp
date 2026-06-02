@@ -2,13 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %> 
 <%@ page import="domain.Faculty"%>
-<%
-Faculty f1 = new Faculty((long) 1, "1", "1", "1", "1");
-Faculty f2 = new Faculty((long) 2, "2", "2", "2", "2");
-Faculty[] faculties = new Faculty[] { f1, f2 };
-int length = faculties.length;
-pageContext.setAttribute("faculties", faculties);
-%>
+
 <!DOCTYPE html>
 <html>
 <head>

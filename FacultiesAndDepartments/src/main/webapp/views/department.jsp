@@ -3,15 +3,6 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ page import="domain.Department"%>
 <%@ page import="domain.Faculty"%>
-<%
-Faculty f1 = new Faculty("1", "1", "1", "1");
-Faculty[] faculties = new Faculty[] { f1 };
-Department d1 = new Department("1", "1", "1", "1", f1);
-Department d2 = new Department("2", "2", "2", "2", f1);
-Department[] departments = new Department[] { d1, d2 };
-int length = departments.length;
-pageContext.setAttribute("departments", departments);
-%>
 <!DOCTYPE html>
 <html>
 <head>
