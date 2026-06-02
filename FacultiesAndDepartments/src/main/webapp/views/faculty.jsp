@@ -54,9 +54,9 @@
 					<form method="POST" action="">
 						<h3 class="mt-2">Новый факультет</h3>
 						<div class="mb-2">
-							<label for="name" class="col-sm-7 col-form-label">Название</label>
+							<label for="facName" class="col-sm-7 col-form-label">Название</label>
 							<div class="col-sm-7">
-								<input type="text" name="name" class="form-control"
+								<input type="text" name="facName" class="form-control"
 									id="facultyName" />
 							</div>
 						</div>

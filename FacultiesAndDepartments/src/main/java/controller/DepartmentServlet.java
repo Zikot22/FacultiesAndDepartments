@@ -37,6 +37,13 @@ public class DepartmentServlet extends HttpServlet {
 		DepartmentDbDAO dao = new DepartmentDbDAO();
 
 		try {
+			faculties = daoFaculty.findAll();
+			request.setAttribute("faculties", faculties);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
 			departments = dao.findAll();
 			faculties = daoFaculty.findAll();
 			for (Department demartment : departments) {
@@ -55,6 +62,27 @@ public class DepartmentServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		DepartmentDbDAO dao = new DepartmentDbDAO();
+
+		String name = request.getParameter("depName");
+		String shortName = request.getParameter("shortName");
+		String head = request.getParameter("head");
+		String phoneNumber = request.getParameter("phoneNumber");
+
+		String faculty = request.getParameter("selectFaculty");
+		int index1 = faculty.indexOf('=');
+		int index2 = faculty.indexOf("Name");
+		String f1 = faculty.substring(index1 + 1, index2);
+		Long idFaculty = Long.parseLong(f1.trim());
+
+		Department newDepartment = new Department(name, shortName, head, phoneNumber, idFaculty);
+
+		try {
+			Long index = dao.insert(newDepartment);
+			System.out.println("Adding result: " + index);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		doGet(request, response);
 	}
 }

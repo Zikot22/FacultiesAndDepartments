@@ -34,6 +34,15 @@ public class Department {
 		this.faculty = faculty;
 	}
 	
+	public Department(String name, String shortName,
+			String head, String phoneNumber, Long facultyId) {
+		this.name = name;
+		this.shortName = shortName;
+		this.head = head;
+		this.phoneNumber = phoneNumber;
+		this.facultyId = facultyId;
+	}
+	
 	public Department(Long id, String name, String shortName,
 			String head, String phoneNumber, Long facultyId, Faculty faculty) {
 		this.id = id;
