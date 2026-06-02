@@ -62,7 +62,7 @@ public class DepartmentDbDAO implements RepositoryDAO<Department> {
 	public void update(Department department) throws Exception {
 	    try (Connection con = getConnection();
 	         PreparedStatement pst = con.prepareStatement(edit_department)) {
-	        pst.setString(1, department.getFaculty());
+	        pst.setLong(1, department.getFacultyId());
 	        pst.setString(2, department.getName());
 	        pst.setString(3, department.getShortName());
 	        pst.setString(4, department.getHead());

@@ -41,10 +41,12 @@
 									<td>${faculty.getShortName()}</td>
 									<td>${faculty.getDean()}</td>
 									<td>${faculty.getPhoneNumber()}</td>
-									<td width="20"><a href="#" role="button"
+									<td width="20"><a href="editfaculty?id=${faculty.getId()}" role="button"
 										class="btn btn-outline-primary"> Редактировать </a></td>
-									<td width="20"><a href="#" role="button"
-										class="btn btn-outline-primary"> Удалить </a></td>
+									<td width="20"><a href="deletefaculty?id=${faculty.getId()}" role="button"
+										onclick="return confirm('Удалить факультет с кодом: '+${faculty.getId()}+'?')" 
+										class="btn btn-outline-primary">
+										 Удалить </a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
